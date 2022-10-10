@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eu sou foda!</title>
+</head>
+<body>
+
+    <center><h2>VOCÊ É FODA!</h2></center><br><br>
+
+    <center>
+        <div id="study"></div><br>
+        <div id="work"></div><br><br><br>
+        <h3>O MUNDO É SEU!</h3>
+    </center>
+
+
+    <script>
+
+        function calculate() {
+            const startDate  = '2017-02-20'
+            const startProfessionalDate = '2020-01-01'
+
+            const multipliers = 1000 * 60 * 60 * 24
+
+            const today = new Date()
+
+            const diffInMs   = today - new Date(startDate)
+            const diffInDays = diffInMs / multipliers
+
+            const professionalDiffInMS = today - new Date(startProfessionalDate)
+            const professionalDiffInDays = professionalDiffInMS / multipliers
+
+            const howManyDaysOfStudy = Math.floor(diffInDays)
+            const howManyDaysAsProfessional = Math.floor(professionalDiffInDays)
+
+            document.querySelector('#study').innerHTML = `<p><strong>Você</strong> estuda <strong>programação</strong> á mais de ${Math.floor(howManyDaysOfStudy/365)} anos.</p>${howManyDaysOfStudy} dias!`
+            document.querySelector('#work').innerHTML = `<p><strong>Você</strong> é um ótimo <strong>profissional</strong> á mais de ${Math.floor(howManyDaysAsProfessional/365)} anos.</p>${howManyDaysAsProfessional} dias!`
+        }
+
+        calculate()
+        setInterval(calculate, 30000)
+
+    </script>
+
+</body>
+</html>
